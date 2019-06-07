@@ -15,6 +15,7 @@ public class SpringMain {
 		
 		System.out.println("Autowiring byType. Employee Name="+serviceByType.getEmployee().getName());
 		
+		
 		EmployeeService serviceByConstructor = ctx.getBean("employeeServiceConstructor", EmployeeService.class);
 		
 		System.out.println("Autowiring by Constructor. Employee Name="+serviceByConstructor.getEmployee().getName());
