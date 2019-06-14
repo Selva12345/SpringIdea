@@ -7,7 +7,7 @@
 		
 		default-autowire="byName" default-autowire-candidates="*" >
 
-<bean name="employee" class="Spring.io.SpringIdea.Employee">
+<bean id="employee" class="Spring.io.SpringIdea.Employee">
 	<property name="name" value="Pankaj"></property>
 </bean>
 
@@ -19,7 +19,9 @@
 <bean name="employeeServiceByName" class="Spring.io.SpringIdea.EmployeeService" autowire="byName" />
 
 <!-- autowiring byType, there should be only one bean definition for the mapping -->
-<bean name="employeeServiceByType" class="Spring.io.SpringIdea.EmployeeService" autowire="byType" />
+<bean name="employeeServiceByType" class="Spring.io.SpringIdea.EmployeeService" autowire="byType" >
+	<property name="employee" ref="employee"></property>
+</bean>
 
 <!-- autowiring by constructor -->
 <bean name="employeeServiceConstructor" class="Spring.io.SpringIdea.EmployeeService" autowire="constructor" />
